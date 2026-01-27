@@ -86,7 +86,7 @@ useEffect(() => {
 
   return (
     <div className="container">
-      <Link to="/" style={{ marginBottom: '20px', display: 'block' }}>
+      <Link to="/" style={{ marginBottom: '20px', display: 'block',color:'White', fontWeight:'bold'}}>
           ← Back to Home
       </Link>
       <div className="search-container">

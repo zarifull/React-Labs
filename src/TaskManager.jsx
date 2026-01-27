@@ -68,99 +68,116 @@ const filteredTasks = useMemo(() => {
 }, [tasks, filter, searchTerm]);
 
   const isInputEmpty = input.trim().length > 0;
-return (
+
+  const handleKeyPress = (e) => {
+    if(e.key === 'Enter' && isInputEmpty){
+      addTask();
+    }
+  }
+  return (
     <div className="container">
-      <Link to="/" style={{ marginBottom: '20px', display: 'block' }}>
+      <Link to="/" style={{color: 'white', fontWeight:'bold'}} >
           ← Back to Home
       </Link>
-      <input 
-  type="text" 
-  placeholder="Search tasks..." 
-  value={searchTerm}
-  onChange={(e) => setSearchTerm(e.target.value)}
-  style={{ marginBottom: '10px', width: '100%', padding: '20px', marginTop: '20px' }}
-/>
-      <h1>Manage Tasks</h1>
       
-      <div className="input-group">
+      <div className="task-container">
+        <h1 style={{ color: '#6c5ce7', textAlign: 'center' }}>Manage Tasks</h1>
+        
         <input 
-          type="text"
-          value={input} 
-          placeholder='What needs to be done?'
-          onChange={(e) => setInput(e.target.value)} 
+          type="text" 
+          placeholder="🔍 Search tasks..." 
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyDown={handleKeyPress}
+          className="search-input" 
+          style={{ width: '95%', marginBottom: '20px' }}
         />
-        <select value={priority} onChange={(e) => setPriority(e.target.value)}>
-          <option value="High">High</option>
-          <option value="Medium">Medium</option>
-          <option value="Low">Low</option> 
-        </select>
-        <button onClick={addTask}
-        disabled={!isInputEmpty}
-        >Add Task</button>
-      </div>
-      <div className="filter-bar">
-        <button 
-            onClick={() => setFilter("all")} 
-            style={{ fontWeight: filter === "all" ? "bold" : "normal" }}
-        >
-            All
-        </button>
-        <button 
-            onClick={() => setFilter("active")} 
-            style={{ fontWeight: filter === "active" ? "bold" : "normal" }}
-        >
-            Active
-        </button>
-        <button 
-            onClick={() => setFilter("completed")} 
-            style={{ fontWeight: filter === "completed" ? "bold" : "normal" }}
-        >
-            Completed
-        </button>
-        </div>
-      <div className="task-list">
-        {filteredTasks.map((task) => (
-          /* FIX: All attributes must be INSIDE the opening <div> tag */
-          <div 
-            key={task.id} 
-            className="task-card"
-            style={{ 
-              borderLeft: `10px solid ${
-                task.priority === 'High' ? '#ff7675' : 
-                task.priority === 'Medium' ? '#fdcb6e' : '#55efc4'
-              }`,
-              padding: '15px',
-              margin: '10px 0',
-              background: '#fff',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              borderRadius: '8px',
-              boxShadow: '0 2px 5px rgba(0,0,0,0.1)'
-            }}
+
+        <div className="input-group">
+          <input 
+            type="text"
+            value={input} 
+            placeholder='What needs to be done?'
+            onChange={(e) => setInput(e.target.value)} 
+            onKeyDown={handleKeyPress}
+          />
+          <select value={priority} onChange={(e) => setPriority(e.target.value)}>
+            <option value="High">🔥 High</option>
+            <option value="Medium">⚡ Medium</option>
+            <option value="Low">🍃 Low</option> 
+          </select>
+          <button 
+            onClick={addTask}
+            disabled={!isInputEmpty}
+            className="sort-button"
+            style={{ background: isInputEmpty ? '#6c5ce7' : '#6c5ce7' }}
           >
-            <div>
-              <h3 style={{ 
-                    textDecoration: task.isCompleted ? 'line-through' : 'none',
-                    opacity: task.isCompleted ? 0.5 : 1,
-                    cursor: 'pointer'
-                }}
-              onClick={() => toggleCompleted(task.id)}
-              >{task.text}</h3>
-              <small>Priority: {task.priority}</small>
-            </div>
+            Add Task
+          </button>
+        </div>
+
+        <div className="filter-bar">
+          {['all', 'active', 'completed'].map((f) => (
             <button 
-              onClick={() => deleteTask(task.id)} 
-              style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '20px' }}
+                key={f}
+                onClick={() => setFilter(f)} 
+                className={`filter-btn ${filter === f ? 'active' : ''}`}
             >
-              🗑️
+                {f.charAt(0).toUpperCase() + f.slice(1)}
             </button>
-          </div>
-        ))}
-      </div>
-      <button onClick={clearAll} style={{ backgroundColor: 'gray', color: 'white' }}>
-        Clear All
+          ))}
+        </div>
+
+        <div className="task-list">
+          {filteredTasks.length > 0 ? (
+            filteredTasks.map((task) => (
+              <div 
+                key={task.id} 
+                className="task-card"
+                style={{ 
+                  background: '#f8f9fa',
+                  borderLeft: `10px solid ${
+                    task.priority === 'High' ? '#e03131' : 
+                    task.priority === 'Medium' ? '#fab005' : '#087f5b'
+                  }`,
+                  padding: '15px',
+                  margin: '10px 0',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  borderRadius: '12px'
+                }}
+              >
+                <div>
+                  <h3 style={{ 
+                        margin: 0,
+                        textDecoration: task.isCompleted ? 'line-through' : 'none',
+                        color: task.isCompleted ? '#aaa' : '#2d3436',
+                        cursor: 'pointer'
+                    }}
+                    onClick={() => toggleCompleted(task.id)}
+                  >
+                    {task.text}
+                  </h3>
+                  <small style={{ color: '#636e72' }}>Priority: {task.priority}</small>
+                </div>
+                <button 
+                  onClick={() => deleteTask(task.id)} 
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '20px' }}
+                >
+                  🗑️
+                </button>
+              </div>
+            ))
+          ) : (
+            <p style={{ textAlign: 'center', color: 'white', opacity: 0.8 }}>No tasks found...</p>
+          )}
+        </div>
+
+        <button onClick={clearAll} className="clear-btn">
+          Clear All Tasks
         </button>
+      </div>
     </div>
   );
 }
