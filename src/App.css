@@ -1,0 +1,18 @@
+:root {
+  --primary: #646cff;
+  --bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --text: #2d3436;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
