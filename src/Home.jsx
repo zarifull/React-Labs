@@ -57,6 +57,7 @@ const Home = () => {
                         </Link>
                         <span style={badgeStyle}>State Management, CRUD operations</span>
                     </li>
+                    <li style={{ marginBottom: '15px' }}><Link to='/currency' style={{ textDecoration: 'none', color: '#3498db', fontWeight: 'bold' }}>💰 Currency Converter</Link> <span style={badgeStyle}>API, Math, Real-time Data</span></li>
                 </ul>
               </div>
           </div>
