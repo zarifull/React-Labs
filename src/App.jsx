@@ -5,6 +5,7 @@ import Weather from './Weather';
 import Lesson1 from './Lesson1';
 import TaskManager from './taskManager';
 import CurrencyConverter from './CurrencyConverter';
+import MovieSearch from './MovieSearch';
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +15,8 @@ function App() {
         <Route path="/task-manager" element={<TaskManager />} />
         <Route path="/weather" element={<Weather />} />
         <Route path='/currency' element={<CurrencyConverter />}/>
+        <Route path='/movies' element={<MovieSearch />}/>
+
       </Routes>
     </BrowserRouter>
   );
