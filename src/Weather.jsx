@@ -6,8 +6,7 @@ const Weather = () => {
     const [weather,setWeather]= useState(null);
 
     const getWetherData = async () => {
-        const apiKey = "a009a8468d93c12375a0bbbc29423fb5";
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_WEATHER_API_KEY}&units=metric`;
         try {
             const response = await fetch(url);
             const data = await response.json();

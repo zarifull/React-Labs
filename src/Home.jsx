@@ -58,7 +58,7 @@ const Home = () => {
                         <span style={badgeStyle}>State Management, CRUD operations</span>
                     </li>
                     <li style={{ marginBottom: '15px' }}><Link to='/currency' style={{ textDecoration: 'none', color: '#3498db', fontWeight: 'bold' }}>💰 Currency Converter</Link> <span style={badgeStyle}>API, Math, Real-time Data</span></li>
-                    <li style={{ marginBottom: '15px' }}><Link to='/movies' style={{ textDecoration: 'none', color: '#3498db', fontWeight: 'bold' }}>🎬 Movies</Link> <span style={badgeStyle}>OMDb API, Async/Await, Conditional Rendering, Data Mapping</span></li>
+                    <li style={{ marginBottom: '15px' }}><Link to='/movies' style={{ textDecoration: 'none', color: '#3498db', fontWeight: 'bold' }}>🎬 Movies</Link> <span style={badgeStyle}>Zustand, Debouncing, OMDb API, LocalStorage Persistence</span></li>
                 </ul>
               </div>
           </div>
