@@ -1,0 +1,81 @@
+.lab_container {
+   text-align: center;
+   background-color: #ffffff;
+}
+.main_title{
+    color: #6c5ce7;
+}
+.container {
+    padding: 20px;
+    /* background-color: #1a1a2e;  */
+    color: #ddd;
+    height: auto ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.header{
+    color: #868e96;
+    padding: 1rem 0;
+}
+.productTitle{
+    color:white;
+}
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5em;
+    margin: 20px;
+}
+.productDescription{
+    color: #dee2e6;
+}
+
+.card {
+    background: #6c5ce7;
+    border: 1px solid #4834d4;
+    border-radius: 12px;
+    padding: 5px;
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    /* ADD THESE PROPERTIES */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures all cards in a row are the same height */
+}
+
+.productDescription {
+    color: #dee2e6;
+    margin-bottom: 10px;
+    /* This allows the description to take up space, 
+       but we want the button to stay at the bottom. */
+}
+
+.price {
+    color: #f3f0ff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: auto; /* Pushes the price and everything below it to the bottom */
+    margin-bottom: 0;
+}
+
+.buyBtn {
+    background-color: white;
+    color: #b197fc;
+    border: none;
+    padding: 10px ;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    align-self: center; /* Keeps the button centered if it's inside a flex column */
+    margin: 0.5em 0;
+}
+
+.buyBtn:hover {
+    color: #5f3dc4
+}
+.productImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Сүрөттү кеспей, толук көрсөтүү үчүн маанилүү */
+    padding: 15px;
+}

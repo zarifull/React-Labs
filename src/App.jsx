@@ -3,9 +3,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Weather from './Weather'; 
 import Lesson1 from './Lesson1';
-import TaskManager from './taskManager';
+import TaskManager from './TaskManager';
 import CurrencyConverter from './CurrencyConverter';
 import MovieSearch from './MovieSearch';
+import ECommerceLab from './ECommerceLab';
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
         <Route path="/weather" element={<Weather />} />
         <Route path='/currency' element={<CurrencyConverter />}/>
         <Route path='/movies' element={<MovieSearch />}/>
+        <Route path='/market-plays' element={<ECommerceLab />}/>
 
       </Routes>
     </BrowserRouter>
