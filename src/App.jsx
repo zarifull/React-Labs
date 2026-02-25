@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './Home';
-import Weather from './Weather'; 
-import Lesson1 from './Lesson1';
-import TaskManager from './TaskManager';
-import CurrencyConverter from './CurrencyConverter';
-import MovieSearch from './MovieSearch';
-import ECommerceLab from './ECommerceLab';
+import Home from './pages/Home';
+import Weather from './pages/Weather'; 
+import Lesson1 from './pages/Lesson1';
+import TaskManager from './pages/TaskManager';
+import CurrencyConverter from './pages/CurrencyConverter';
+import MovieSearch from './pages/MovieSearch';
+import ECommerceLab from './pages/ECommerceLab';
 function App() {
   return (
     <BrowserRouter>

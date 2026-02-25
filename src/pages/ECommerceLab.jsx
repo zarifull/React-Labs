@@ -1,7 +1,7 @@
-import { ProductList } from './ecomerce/Productlist';
-import { CartDisplay } from './ecomerce/cartDisplay';
+import { ProductList } from '../ecomerce/Productlist';
+import { CartDisplay } from '../ecomerce/cartDisplay';
 import { Link } from 'react-router-dom';
-import styles from './ecomerce/Ecom.module.css';
+import styles from '../ecomerce/Ecom.module.css';
 
 const ECommerceLab = () => {
   return (
