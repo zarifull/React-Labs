@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useFetch } from './hooks/useFetch';
-import { useMovieStore } from './store/useMovieStore';
+import { useFetch } from '../hooks/useFetch';
+import { useMovieStore } from '../store/useMovieStore';
 
 const MovieSearch = () => {
     const [query, setQuery] = useState('');
