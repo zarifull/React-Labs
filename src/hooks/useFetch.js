@@ -19,7 +19,7 @@ export const useFetch = (url) => {
                 } else {
                     setError(result.Error);
                 }
-            } catch (err) {
+            } catch {
                 setError("Network error occurred.");
             } finally {
                 setLoading(false);
