@@ -84,3 +84,7 @@ npx vitest
 - This is a learning-focused project, so the codebase intentionally mixes JavaScript and TypeScript labs.
 - API-powered pages require valid keys in `.env`.
 - Existing lint issues may appear in some files unrelated to UI behavior.
+
+
+# React Labs 🚀
+- Live Demo: [https://react-labs-five.vercel.app/](https://react-labs-five.vercel.app/)
