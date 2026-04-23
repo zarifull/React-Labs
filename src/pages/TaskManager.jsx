@@ -1,5 +1,4 @@
 import React,{useState,useMemo,useEffect} from 'react';
-import { onCLS } from 'web-vitals';
 import { Link } from 'react-router-dom';
 
 
