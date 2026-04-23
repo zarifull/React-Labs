@@ -10,7 +10,6 @@ const ECommerceLab = () => {
           ← Back to Home
       </Link>
       <h1 className={styles.main_title}>🚀 E-Commerce</h1>
-      {/* Our TSX components living inside a JSX file! */}
       <ProductList />
       <CartDisplay />
     </div>

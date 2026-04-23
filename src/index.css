@@ -63,3 +63,40 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@media (max-width: 768px) {
+  .container {
+      padding: 20px !important;
+      margin: 10px;
+      width: 90% !important;
+  }
+
+  h1 {
+      font-size: 1.5rem !important;
+  }
+
+  .links ul li {
+      display: flex;
+      flex-direction: column; 
+      align-items: flex-start;
+      margin-bottom: 25px !important;
+  }
+
+  .links ul li span {
+      margin-left: 0 !important; 
+      margin-top: 8px; 
+      display: inline-block;
+      font-size: 0.75rem !important;
+      line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      padding: 15px !important;
+  }
+  
+  p {
+      font-size: 1rem !important;
+  }
+}

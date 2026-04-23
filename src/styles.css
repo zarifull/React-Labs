@@ -105,7 +105,6 @@ body {
   cursor: pointer;
 }
 
-/* Weather style  */
 .weather-container {
   background: var(--glass-bg);
   backdrop-filter: blur(12px);

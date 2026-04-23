@@ -5,7 +5,6 @@ import CurrencyConverter from './CurrencyConverter';
 
 describe('CurrencyConverter Component', () => {
   
-  // This helper function creates a fake fetch response
   const mockFetchResponse = (data: any, ok = true) => {
     return vi.fn().mockResolvedValue({
       ok,
@@ -42,7 +41,6 @@ describe('CurrencyConverter Component', () => {
   });
 
   it('displays an error message when the API request fails', async () => {
-    // We mock a rejection to trigger the 'catch' block in your component
     const fetchMock = vi.fn().mockRejectedValue(new Error("Network Error"));
     vi.stubGlobal('fetch', fetchMock);
 

@@ -58,3 +58,49 @@
     font-weight: bold;
     margin-top: 10px;
 }
+
+
+@media (max-width: 1024px) {
+    .cartContainer {
+        margin: 1em 5% 2em !important; 
+        padding: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cartItem {
+        justify-content: space-between !important;
+        flex-direction: row !important; 
+        flex-wrap: wrap; 
+        padding: 15px 0;
+        gap: 10px;
+    }
+
+    .cartItem span {
+        flex: 1; 
+        text-align: left;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .removeBtn {
+        width: auto !important; 
+        padding: 6px 12px !important;
+        font-size: 0.85rem;
+        align-self: center;
+        
+        background-color: #fff5f5; 
+        border: 1px solid #ff4d4d;
+    }
+
+    .clearBtn {
+        width: 100%;
+        padding: 14px;
+        margin-top: 20px;
+    }
+}
+
+.clearBtn:focus, .removeBtn:focus {
+    outline: 3px solid #00d2ff;
+    outline-offset: 2px;
+}

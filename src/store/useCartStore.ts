@@ -12,7 +12,6 @@ export const useCartStore = create<CartState>((set) => ({
     cart: [],
     
     addToCart: (product) => set((state) => {
-        // Logic to check if item already exists to increment quantity
         const existingItem = state.cart.find(item => item.id === product.id);
         if (existingItem) {
             return {
