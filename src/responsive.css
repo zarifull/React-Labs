@@ -1,0 +1,141 @@
+/* Non-destructive responsive overrides.
+   Keeps original styles untouched and only adjusts layout/spacing by viewport size. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+  .container {
+    padding: 28px 16px;
+  }
+
+  .user-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 18px;
+  }
+
+  .weather-display h1 {
+    font-size: 3rem;
+  }
+
+  /* CSS Modules-safe selectors (target generated class names) */
+  [class*="cartContainer"] {
+    margin: 1.5rem 2rem 2.5rem;
+  }
+}
+
+/* Tablets and mobile landscape */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  .container {
+    padding: 20px 14px;
+  }
+
+  .task-container,
+  .weather-container,
+  .card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .search-container,
+  .input-group,
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .sort-button,
+  .delete-button,
+  .clear-btn,
+  .weather-button {
+    width: 100%;
+  }
+
+  .weather-input {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .weather-button {
+    margin: 0.5rem 0 0;
+  }
+
+  .user-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .weather-display h1 {
+    font-size: 2.4rem;
+  }
+
+  [class*="productGrid"] {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1rem;
+    margin: 12px 0;
+  }
+
+  [class*="cartContainer"] {
+    margin: 1rem 0 2rem;
+    padding: 16px;
+  }
+
+  [class*="cartItem"] {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    text-align: left;
+  }
+
+  [class*="removeBtn"],
+  [class*="clearBtn"] {
+    width: 100%;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .container {
+    padding: 14px 10px;
+  }
+
+  .task-container,
+  .weather-container,
+  .card {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .search-input,
+  .input-group input,
+  .input-group select,
+  .weather-input {
+    font-size: 16px;
+  }
+
+  .weather-display h1 {
+    font-size: 2rem;
+  }
+
+  .filter-btn {
+    width: 100%;
+  }
+
+  [class*="main_title"] {
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
+}

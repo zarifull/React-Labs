@@ -77,7 +77,6 @@ const CurrencyConverter: React.FC = () => {
                         </select>
                     </div>
 
-                    {/* Error Message Display */}
                     {error && (
                         <div style={{ color: '#ff4d4d', textAlign: 'center', padding: '10px', background: 'rgba(255, 77, 77, 0.1)', borderRadius: '10px' }}>
                             ⚠️ {error}

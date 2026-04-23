@@ -1,6 +1,6 @@
 import { useCartStore } from '../store/useCartStore';
 import type { Product } from '../types/product';
-import styles from './Ecom.module.css'; // 1. CSS модулун импорттоо
+import styles from './Ecom.module.css'; 
 
 const DUMMY_PRODUCTS: Product[] = [
     {
@@ -57,7 +57,6 @@ const DUMMY_PRODUCTS: Product[] = [
                 {DUMMY_PRODUCTS.map((product) => (
                     <div key={product.id} className={styles.card}>
                         <h3 className={styles.productTitle}>{product.title}</h3>
-                        {/* Сүрөт классын коштук */}
                         <div style={{ height: '150px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'white', borderRadius: '8px', marginBottom: '10px' }}>
                             <img 
                                 src={product.image} 

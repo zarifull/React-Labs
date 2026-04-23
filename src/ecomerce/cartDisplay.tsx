@@ -1,10 +1,9 @@
 import { useCartStore } from '../store/useCartStore';
-import styles from './Cart.module.css'; // Жаңы стилдерди импорттоо
+import styles from './Cart.module.css'; 
 
 export const CartDisplay = () => {
     const { cart, removeFromCart, clearCart } = useCartStore();
 
-    // reduce методу массивди бир мааниге (бул жерде суммага) айландыруу үчүн эң optimal ыкма
     const total = cart.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
 
     return (
